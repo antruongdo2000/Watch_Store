@@ -4,6 +4,12 @@
     box-sizing: border-box;
     font-family: arial,sans-serif;
 }
+:root {
+    --primary-color: #56cfe1;
+    --secondary-color: black;
+    --switch-layout-color: gray;
+    --border-color: #b1adad;
+}
 
 iframe {
     border: none;
@@ -12,7 +18,7 @@ iframe {
 
 a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 ul {
     list-style-type: none;

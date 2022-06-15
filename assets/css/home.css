@@ -51,6 +51,7 @@
     align-items: center;
     font-weight: 800;
     transition: .5s;
+    color: white;
 }
 .an-slider_content .an-content_button:hover {
     background-color: black;
