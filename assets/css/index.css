@@ -29,6 +29,12 @@ img {
     object-fit: cover;
 }
 
+button {
+    border: none;
+    outline: none;
+    background: unset;
+}
+
 .an-row {
     display: flex;
     flex-wrap:wrap;
