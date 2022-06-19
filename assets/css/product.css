@@ -185,6 +185,7 @@ span.an-wishlist_box::before {
     cursor: pointer;
     transition: .4s;
 }
+
 .bx-chevron-right {
     right: 0;
 }
