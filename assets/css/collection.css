@@ -472,7 +472,7 @@
     position: absolute;
     top: 10px;
     left: -100%;
-    z-index: 2;
+    z-index: 3;
     transition: .3s;
     color: white;
     font-size: 25px;
