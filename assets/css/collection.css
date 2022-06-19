@@ -425,7 +425,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-100%);
-    z-index: 2;
+    z-index: 3;
     text-align: center;
     width: 70%;
     opacity: 0;
@@ -511,6 +511,14 @@ span.an-wishlist_box::before {
 }
 .an-item_wishlist i:hover + span.an-wishlist_box {
     opacity: 1;
+}
+.an-item_link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
 }
 .an-item_title {
     /* width: 80%;
