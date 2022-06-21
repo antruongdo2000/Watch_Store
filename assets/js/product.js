@@ -15,6 +15,15 @@ var tabTitles = document.querySelectorAll(".an-tab_title");
 var tabMHeader = document.querySelectorAll(".an-m-tab_header");
 var tabItems = document.querySelectorAll(".an-tab_item");
 
+var dropdownText = document.querySelector(".an-sort_text");
+var dropdownItems = document.querySelectorAll(".an-sort_item");
+var dropdownHeader = document.querySelector(".an-sort_header");
+var dropdownWrapper = document.querySelector(".an-sort_wrapper");
+var dropdownOverlay = document.querySelector(".an-sort_overlay");
+
+var writeRevBtn = document.querySelector(".an-write_review");
+var widgetForm = document.querySelector(".an-review-widget_form");
+
 minusSlide(slideItemsRelated, slideIndexRelated, stepSlideRelated, prevBtnRelated);
 plusSlide(slideItemsRelated, slideIndexRelated, stepSlideRelated, nextBtnRelated);
 
@@ -24,6 +33,9 @@ plusSlide(slideItemsRecent, slideIndexRecent, stepSlideRecent, nextBtnRecent);
 handleTab(tabTitles, "add");
 handleTab(tabMHeader, "toggle");
 
+handleDropDown(dropdownHeader, dropdownWrapper);
+
+toggleWidgetForm();
 
 function showSlide(n, element) {
     element.forEach(function(slideItem){
@@ -75,5 +87,37 @@ function handleTab(element, action){
             $(tabItems[titleIndex]).siblings().find(".an-m-tab_header").removeClass("active");
 
         })
+    })
+}
+
+function handleDropDown(dropHeader, dropWrapper) {
+    dropHeader.addEventListener("click", function() {
+        dropWrapper.classList.toggle("active");
+        this.classList.toggle("active");
+        // dropOverlay.classList.toggle("active");
+    })
+
+    // dropOverlay.addEventListener("click", function() {
+    //     dropWrapper.classList.toggle("active");
+    //     this.classList.remove("active");
+    // })
+
+    dropdownItems.forEach(function(dropdownItem) {
+        dropdownItem.addEventListener("click", function() {
+            this.classList.add("active");
+            $(this).siblings().removeClass("active");
+
+            dropdownText.innerText = this.innerText;
+            dropWrapper.classList.toggle("active");
+            dropHeader.classList.toggle("active");
+            // dropOverlay.classList.remove("active");
+        })
+        
+    })
+}
+
+function toggleWidgetForm() {
+    writeRevBtn.addEventListener("click", function(e) {
+        widgetForm.classList.toggle("active");
     })
 }
