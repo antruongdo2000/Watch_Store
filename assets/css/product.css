@@ -21,11 +21,13 @@
 .an-tab_item .an-tab_content {
     opacity: 0;
     height: 0;
+    visibility: hidden;
 }
 .an-tab_item.active .an-tab_content {
     opacity: 1;
     height: auto;
     transition: 1s;
+    visibility: visible;
 }
 .an-tab_content h4{
     margin-bottom: 10px;
@@ -154,12 +156,60 @@
     opacity: 0;
     height: 0;
     transition: .5s;
+    visibility: hidden;
 }
 .an-review-widget_form.active {
     opacity: 1;
     height: auto;
     border-top: 1px solid var(--border-color);
     padding-top: 20px;
+    visibility: visible;
+}
+.an-form label {
+    display: block;
+    width: 20%;
+    margin-bottom: 5px;
+}
+.an-form>div {
+    margin-bottom: 20px;
+}
+.an-form input {
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+}
+.an-form textarea {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+}
+.an-form_rating .an-star {
+    font-size: 50px;
+    cursor: pointer;
+}
+.bx.bx-camera {
+    font-size: 120px;
+    padding: 20px;
+    border: 3px solid var(--primary-color);
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: .4s;
+}
+.bx.bx-camera:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+.an-form .an-form_submit {
+    width: 20%;
+    padding: 20px 30px;
+    background-color: black;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: .4s;
+    color: white;
+}
+.an-form .an-form_submit:hover {
+    background-color: var(--primary-color);
 }
 .an-review-widget_review {
     border-top: 1px solid var(--border-color);
@@ -246,6 +296,10 @@
 }
 .an-action_react i:hover {
     color: var(--primary-color);
+}
+.an-action_react i.active {
+    background-color: var(--primary-color);
+    color: white;
 }
 /* section_product-related   */
 
@@ -744,8 +798,7 @@ span.an-wishlist_box::before {
     }
     .an-tab_item.active .an-tab_content {
         height: 100%;
-        opacity: 1;
-        
+        opacity: 1;        
     }
     .an-m-tab_header.active .an-tab_icon::before {
         transform: translate(-50%, -50%) rotate(90deg);
@@ -768,5 +821,31 @@ span.an-wishlist_box::before {
     }
     .an-product-related_heading, .an-product-recent_heading {
         font-size: 35px;
+    }
+    .an-left {
+        gap: 15px;
+    }
+    .an-review-widget_histogram {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+    .an-right {
+        margin-top: 20px;
+        gap: 20px;
+        display: block;
+        width: 100%;
+    }
+    .an-write_review {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .an-sort_header {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .an-form label, .an-form .an-form_submit {
+        width: 100%;
     }
 }
