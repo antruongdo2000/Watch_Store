@@ -528,8 +528,7 @@ span.an-wishlist_box::before {
     }
     .an-tab_item.active .an-tab_content {
         height: 100%;
-        opacity: 1;
-        
+        opacity: 1;        
     }
     .an-m-tab_header.active .an-tab_icon::before {
         transform: translate(-50%, -50%) rotate(90deg);
