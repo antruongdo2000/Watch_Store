@@ -137,7 +137,7 @@ function toggleWidgetForm() {
 
 function handleHistogramBar(){
     histogramBars.forEach(function(histogramBar) {
-        var histogramPercent = histogramBar.parentElement.parentElement.querySelector(".an-histogram_percentage").innerText;
+        var histogramPercent = histogramBar.parentElement.parentElement.querySelector(".an-histogram_percentage").innerHTML;
         histogramBar.style.width = histogramPercent;
     })
 }
