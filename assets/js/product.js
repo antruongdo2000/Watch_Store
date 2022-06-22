@@ -24,6 +24,12 @@ var dropdownOverlay = document.querySelector(".an-sort_overlay");
 var writeRevBtn = document.querySelector(".an-write_review");
 var widgetForm = document.querySelector(".an-review-widget_form");
 
+var histogramBars = document.querySelectorAll(".an-histogram_bar-content");
+
+var starRatings = document.querySelectorAll(".an-form_rating .an-star");
+
+var actionReacts = document.querySelectorAll(".an-action_react i");
+
 minusSlide(slideItemsRelated, slideIndexRelated, stepSlideRelated, prevBtnRelated);
 plusSlide(slideItemsRelated, slideIndexRelated, stepSlideRelated, nextBtnRelated);
 
@@ -36,6 +42,13 @@ handleTab(tabMHeader, "toggle");
 handleDropDown(dropdownHeader, dropdownWrapper);
 
 toggleWidgetForm();
+
+handleHistogramBar();
+
+handleRating("mouseover");
+// handleRating("click");
+
+handleActionReact();
 
 function showSlide(n, element) {
     element.forEach(function(slideItem){
@@ -119,5 +132,36 @@ function handleDropDown(dropHeader, dropWrapper) {
 function toggleWidgetForm() {
     writeRevBtn.addEventListener("click", function(e) {
         widgetForm.classList.toggle("active");
+    })
+}
+
+function handleHistogramBar(){
+    histogramBars.forEach(function(histogramBar) {
+        var histogramPercent = histogramBar.parentElement.parentElement.querySelector(".an-histogram_percentage").innerText;
+        histogramBar.style.width = histogramPercent;
+    })
+}
+
+function handleRating(eventListen) {
+    starRatings.forEach(function(starRating, ratingIndex){
+        starRating.addEventListener(eventListen, function(){
+            starRatings.forEach(function(starRate, ratingJndex) {
+                if (ratingJndex <= ratingIndex) {
+                    starRate.classList.replace(starRate.classList[1],"bxs-star");
+                }   
+                else {
+                    starRate.classList.replace(starRate.classList[1],"bx-star");
+                }        
+            })              
+        })             
+    })
+}
+
+function handleActionReact(){
+    actionReacts.forEach(function(actionReact){
+        actionReact.addEventListener("click", function(){
+            this.classList.toggle("active");
+            $(this).siblings().removeClass("active");
+        })
     })
 }

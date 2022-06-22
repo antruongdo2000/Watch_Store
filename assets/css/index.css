@@ -34,6 +34,10 @@ button {
     outline: none;
     background: unset;
 }
+textarea {
+    width: 100%;
+    display: block;
+}
 
 .an-row {
     display: flex;
