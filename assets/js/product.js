@@ -30,6 +30,19 @@ var starRatings = document.querySelectorAll(".an-form_rating .an-star");
 
 var actionReacts = document.querySelectorAll(".an-action_react i");
 
+var thumbnailItems = document.querySelectorAll(".an-product_thumbnail-item");
+var productImage = document.querySelector(".an-product_main-img");
+var main_imgs = document.querySelector(".an-main_img-item");
+
+var plusQuantityBtn = document.querySelector(".i.bx.bx-plus");
+var minusQuantityBtn = document.querySelector(".i.bx.bx-minus");
+var outerQuantityBtn = document.querySelector(".an-quantity_input::-webkit-outer-spin-button");
+var innerQuantityBtn = document.querySelector(".an-quantity_input::-webkit-inner-spin-button");
+
+var wishListBtn = document.querySelector(".an-product_wishlist i.bx.bx-heart");
+
+handleThumbnailClick();
+
 minusSlide(slideItemsRelated, slideIndexRelated, stepSlideRelated, prevBtnRelated);
 plusSlide(slideItemsRelated, slideIndexRelated, stepSlideRelated, nextBtnRelated);
 
@@ -49,6 +62,73 @@ handleRating("mouseover");
 // handleRating("click");
 
 handleActionReact();
+
+// handleQuantity();
+
+handleWishList();
+
+function isMobile() {
+    return /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function handleQuantity() {
+    plusQuantityBtn.addEventListener("click", function(){
+        $(innerQuantityBtn).click();
+    })
+    minusQuantityBtn.addEventListener("click", function(){
+        $(outerQuantityBtn).click();
+    })
+}
+
+function handleWishList(){
+    wishListBtn.addEventListener("click", function(){
+        this.parentElement.classList.toggle("active");
+        if (this.parentElement.classList.contains("active")) {
+            this.classList.replace(this.classList[1], "bxs-heart");
+        }
+        else {
+            this.classList.replace(this.classList[1], "bx-heart");
+        }
+        
+    })
+}
+
+function handleThumbnailClick() {
+    thumbnailItems.forEach(function(thumbnailItem, thumbnailIndex) {
+        
+        //create a main_img
+        var main_img = document.createElement("div");
+        main_img.setAttribute("class", "an-main_img-item");
+        productImage.appendChild(main_img);
+        
+        main_img.innerHTML = thumbnailItem.innerHTML;
+        
+        if (thumbnailIndex == 0) {
+            main_img.classList.add("is-selected");
+        }
+        
+        // thumbnail Click event
+        thumbnailItem.addEventListener("click", function() { 
+            this.classList.add("active");
+            $(this).siblings().removeClass("active");
+
+            main_img.classList.add("is-selected");
+            $(main_img).siblings().removeClass("is-selected");
+            
+            if(isMobile()) {
+                $(main_img).siblings().css("transform","translateX(" + thumbnailIndex*(-100) + "%)");
+                main_img.style.transform = "translateX(" + thumbnailIndex*(-100) + "%)";
+            }
+            else {
+                main_img.style.transform = "translateY(" + thumbnailIndex*(-100) + "%)";
+                $(main_img).siblings().css("transform","translateY(" + thumbnailIndex*(-100) + "%)");
+            }
+
+        })
+        
+        
+    })
+}
 
 function showSlide(n, element) {
     element.forEach(function(slideItem){
@@ -165,3 +245,4 @@ function handleActionReact(){
         })
     })
 }
+
