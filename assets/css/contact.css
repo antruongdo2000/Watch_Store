@@ -1,0 +1,101 @@
+
+.an-contact_main {
+    margin-top: 100px;
+}
+.an-contact_form, .an-contact_info {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.an-contact_form {
+    padding-right: 20px;
+}
+.an-contact_info {
+    padding-left: 20px;
+}
+.an-form_title {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.an-contact_form label {
+    display: block;
+    margin-bottom: 5px;
+}
+.an-contact_form input {
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+}
+.an-contact_form input:focus {
+    outline: none;
+}
+#an-contact_form_page {
+    padding-right:4px;
+}
+#an-contact_form_page>div {
+    margin-bottom: 10px;
+    position: relative;
+}
+#an-form_page-mess {
+    padding: 10px 20px;
+}
+#an-contact_form_page>div>span {
+    position: absolute;
+    background-color: #3cefff;
+    transition: transform 0.5s ease;
+}
+
+.an-contact_form .an-form_btn {
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    padding: 13x 0;
+    transition: .4s;
+    cursor: pointer;
+    color: white;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.an-form_btn:hover {
+    background-color: black;
+}
+
+.an-info_heading {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+.an-contact_info p {
+    margin-top: 30px;
+    opacity: .7;
+    font-size: 18px;
+}
+.an-contact_info i.bx.bx-phone-call.bx-tada {
+    margin: 0;
+}
+.an-contact_info i {
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 1200px) {
+    
+}
+
+@media screen and (max-width: 991px) {
+    
+}
+
+@media screen and (max-width: 767px) {
+    .an-contact_form, .an-contact_info {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .an-contact_info {
+        margin-top: 30px;
+    }
+    .an-info_heading, .an-form_title {
+        font-size: 25px;
+    }
+    .an-contact_form {
+        padding-right: 0;
+    }
+}
