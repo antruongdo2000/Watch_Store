@@ -54,7 +54,6 @@ input[type=number] {
 .an-row {
     display: flex;
     flex-wrap:wrap;
-    /* padding: 10px 30px; */
 }
 
 .an-col {
@@ -96,15 +95,9 @@ input[type=number] {
 
 .an-container {
     max-width: 100%;
-    /* padding: 0 10px; */
 }
 
-/* @media screen and (min-width: 1230px) {
-    .an-container {
-        width: 100%;
-        max-width: 1200px;
-    }
-} */
+
 @media screen and (min-width: 1200px) {
 	.an-container {
         width: 100%;
@@ -117,7 +110,6 @@ input[type=number] {
         width: 100%;
         padding-right: 15px;
         padding-left: 15px;
-        /* margin: 30px; */
     }
 }
 
